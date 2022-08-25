@@ -7,16 +7,20 @@ def myFibonacci(x):
     else:
         return myFibonacci(x-1)+myFibonacci(x-2)
 
-fib=[]
+data = open("fibon.txt","w")
+
+list=[]
 for y in range(1,6):
-    fib.append(myFibonacci(y))
-    print(fib)
+    list.append(myFibonacci(y))
 
-fib = [1,1,2,3,5]
-with open("fibon.txt", "w") as data:
-    data.write("1\n")
-    data.write("1\n")
-    data.write("2\n")
-    data.write("3\n")
-    data.write("5\n")
+data.writelines(str(list))
+data.close
 
+
+# fib = [1,1,2,3,5]
+# with open("fibon.txt", "w") as data:
+#     data.write("1\n")
+#     data.write("1\n")
+#     data.write("2\n")
+#     data.write("3\n")
+#     data.write("5\n")
